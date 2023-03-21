@@ -7,13 +7,10 @@ class OrderPage:
 
         self.page = page
 
-        self.add_to_card1 = page.locator('a[data-product-id="1"]').first
+        self.add_to_card1 = page.locator('//*[@src="/get_product_picture/1"]/../a')
         self.view_cart_btn = page.locator('p [href="/view_cart"]')
         self.check_out_btn = page.locator('[class="btn btn-default check_out"]')
         self.register_login_btn = page.locator('p [href="/login"]')
-        #self.signup_name_field = page.locator('[data-qa="signup-name"]')
-        #self.signup_email_field = page.locator('[data-qa="signup-email"]')
-        #self.signup_button = page.locator('[data-qa="signup-button"]')
         self.view_cart_button = page.locator('li [href="/view_cart"]')
         self.address_delivery_field = page.locator('[id="address_delivery"]')
         self.address_billing_field = page.locator('[id="address_invoice"]')
@@ -39,15 +36,6 @@ class OrderPage:
 
     def register_login_btn_click(self):
         self.register_login_btn.click()
-
-    #def signup_name_field_fill(self, name):
-       # self.signup_name_field.fill(name)
-
-   # def signup_email_field_fill(self, email):
-    #    self.signup_email_field.fill(email)
-
-    #def signup_button_click(self):
-     #   self.signup_button.click()
 
     def view_cart_button_click(self):
         self.view_cart_button.click()

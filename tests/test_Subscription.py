@@ -2,7 +2,6 @@ import pytest
 
 
 from pages.Subscription_Page import SubscriptionPage
-from playwright.sync_api import expect
 from data.test_data import Data
 from pages.Products_Page import ProductsPage
 from utils.tools import take_screenshot
@@ -24,7 +23,6 @@ class TestContactUs:
         self.subscription.search_field_fill(Data.email)
         self.subscription.search_btn_click()
         self.subscription.check_success_subscribe_lbl()
-        #expect(subscription_lbl).to_contain_text("substring")
         take_screenshot(self.page, "Verify_Subscription_in_home_page")
 
     def test_TestCase11_Verify_Subscription_in_Cart_page(self, test_setup):
@@ -58,13 +56,3 @@ class TestContactUs:
         self.subscription.scroll_to_header()
         self.subscription.check_slider_carousel()
         take_screenshot(self.page, "Verify_Scroll_Up_without_Arrow_button_and_Scroll_Down_functionality")
-
-
-
-
-
-
-
-
-
-

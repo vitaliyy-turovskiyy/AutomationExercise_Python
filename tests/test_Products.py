@@ -42,7 +42,7 @@ class TestContactUs:
     def test_TestCase12_Add_Products_in_Cart(self, page, test_setup):
         self.products.products_btn_click()
         self.products.hover_first_product_img()
-        #page.wait_for_timeout(2000)
+        page.wait_for_timeout(2000)
         self.products.add_to_cart_btn_click()
         page.wait_for_timeout(2000)
         self.products.continue_shopping_btn_click()
@@ -65,11 +65,3 @@ class TestContactUs:
         self.products.cart_quantity_delete_btn_click()
         expect(self.products.empty_cart_lbl).to_contain_text("Cart is empty!")
         take_screenshot(self.page, "Remove_Products_From_Cart")
-
-
-
-
-
-
-
-

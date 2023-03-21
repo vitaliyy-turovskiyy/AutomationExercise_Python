@@ -19,7 +19,6 @@ class TestContactUs:
     def test_TestCase6_Contact_Us_Form(self, page, test_setup):
         self.contactus.contact_us_btn_click()
         self.contactus.check_get_in_touch_lbl()
-
         self.contactus.name_field_input(Data.name)
         self.contactus.email_field_input(Data.email)
         self.contactus.subject_field.fill("qwe")

@@ -46,7 +46,6 @@ class TestContactUs:
         self.product.products_button_click()
         page.wait_for_timeout(2500)
         expect(self.product.title_text).to_contain_text("All Products")
-
         self.products.search_field.fill('Tshirt')
         self.products.search_btn_click()
         self.products.check_search_products_lbl()
@@ -59,7 +58,6 @@ class TestContactUs:
         self.products.view_cart_btn_click()
         expect(self.product.product_details).to_contain_text("Men Tshirt")
         self.product.login_btn_click()
-
         self.signup.login_email_address_field_input(Data.email3)
         self.signup.login_password_field_input(Data.password)
         self.signup.login_btn_click()
@@ -78,19 +76,3 @@ class TestContactUs:
         self.product.review_button_click()
         self.product.check_thanks_for_message_lbl()
         take_screenshot(self.page, "Add_review_on_product")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

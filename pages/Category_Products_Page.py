@@ -91,9 +91,3 @@ class CategoryPage:
 
     def check_thanks_for_message_lbl(self):
         self.thanks_for_message_lbl.is_visible()
-
-
-
-
-
-

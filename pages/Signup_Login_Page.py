@@ -17,13 +17,9 @@ class SignupPage:
         self.title_mr = page.locator('[id="id_gender1"]')
         self.password_field = page.locator('[id="password"]')
         self.day_of_birth = page.locator('[id="days"]')
-        #self.day_of_birth_choose = page.locator('//*[@id="days"]/option[5]')
         self.months_of_birth = page.locator('id="months"')
-        #self.may_months_of_birth = page.locator('//*[@id="months"]/option[6]')
         self.years_of_birth = page.locator('[id="years"]')
-        #self.years_of_birth_choose = page.locator('#days > option:nth-child(13)')
         self.newsletter_checkbox = page.locator('[id="newsletter"]')
-        #self.optin_checkbox = page.locator('//*[@id="form"]/div/div/div/div[1]/form/div[7]/label')
         self.logged_in_as_user_lbl = page.locator('//*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a')
         self.delete_account_btn = page.locator('[href="/delete_account"]')
         self.delete_account_lbl = page.locator('[data-qa="account-deleted"]')
@@ -80,28 +76,16 @@ class SignupPage:
         self.day_of_birth.click()
         self.day_of_birth.select_option(value="11")
 
-   # def day_of_birth_choose_click(self):
-   #     self.day_of_birth_choose.click()
-
     def months_of_birth_click(self):
         self.months_of_birth.click()
         self.months_of_birth.select_option(value="May")
-
-    #def may_months_of_birth_click(self):
-     #   self.may_months_of_birth.click()
 
     def years_of_birth_click(self):
         self.years_of_birth.click()
         self.years_of_birth.select_option(value="2004")
 
-    #def years_of_birth_choose_click(self):
-     #   self.years_of_birth_choose.click()
-
     def newsletter_checkbox_click(self):
         self.newsletter_checkbox.click()
-
-    #def optin_checkbox_click(self):
-     #   self.optin_checkbox.click()
 
     def first_name_input(self, firstname):
         self.first_name_field.fill(firstname)
@@ -154,30 +138,24 @@ class SignupPage:
 
     def continue_btn2_click(self):
         self.continue_btn2.click()
-# TC2
+
     def login_your_account_lbl_check(self):
         self.login_your_account_lbl.is_visible()
 
-    def login_email_address_field_input(self, email3):
-        self.login_email_address_field.fill(email3)
+    def login_email_address_field_input(self, email2):
+        self.login_email_address_field.fill(email2)
 
     def login_password_field_input(self, password):
         self.login_password_field.fill(password)
 
     def login_btn_click(self):
         self.login_btn.click()
-#TC3
+
     def inform_message_lbl(self):
         self.inform_message.is_visible()
-#TC4
+
     def logout_btn_click(self):
         self.logout_btn.click()
 
-    #def navigates_to_login_page(page: Page) -> None:
-
-        #expect(page).to_have_url(re.compile(r".*/SignupPage"))
-        #expect(page).not_to_have_title("Signup / Login")
-
-#TC5
     def inform_message_signup_check(self):
         self.inform_message_signup.is_visible()

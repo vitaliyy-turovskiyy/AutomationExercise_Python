@@ -8,6 +8,8 @@ class Data:
 
     email3 = 'fake3email@gmail.com'
 
+    email4 = 'fake4email@gmail.com'
+
     name = 'Vitvitvit'
 
     password = 'VitvitvitPassword'
