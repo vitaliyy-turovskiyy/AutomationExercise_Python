@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b0811f87-d27a-470c-9220-fbe278154886" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Category_Products_Page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Category_Products_Page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Place_Order_Page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Place_Order_Page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Signup_Login_Page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Signup_Login_Page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Category_Products.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Category_Products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Contact_Us_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Contact_Us_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Place_Order.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Place_Order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Products.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Signup_Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Signup_Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Subscription.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Subscription.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
