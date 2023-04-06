@@ -10,12 +10,10 @@ from utils.tools import take_screenshot
 class TestContactUs:
 
     @pytest.fixture
-    def test_setup(self, page):
-        self.page = page
-        self.page.set_viewport_size(viewport_size={ 'width': 1366, 'height': 768 })
+    def test_setup(self, new_page):
+        self.page = new_page
         self.subscription = SubscriptionPage(self.page)
         self.products = ProductsPage(self.page)
-        self.page.goto('http://automationexercise.com')
 
     def test_TestCase10_Verify_Subscription_in_home_page(self, test_setup):
         self.subscription.footer_area_scroll()

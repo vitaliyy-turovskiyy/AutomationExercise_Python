@@ -18,6 +18,8 @@ class ContactUsPage:
         self.alert_success_lbl = page.locator('[class="status alert alert-success"]')
         self.home_btn = page.locator('[id="form-section"]')
         self.test_cases_btn = page.locator('//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a')
+        self.chose_file_button = page.locator('[name="upload_file"][class="form-control"]')
+        self.upload_button = page.locator('[type="file"]')
 
     def contact_us_btn_click(self):
         self.contact_us_btn.click()
@@ -42,3 +44,9 @@ class ContactUsPage:
 
     def test_cases_btn_click(self):
         self.test_cases_btn.click()
+
+    def upload_file(self):
+        with self.page.expect_file_chooser() as fc_info:
+            self.upload_button.click()
+        file_chooser = fc_info.value
+        file_chooser.set_files("./test file.docx")

@@ -13,14 +13,12 @@ from utils.tools import take_screenshot
 class TestContactUs:
 
     @pytest.fixture
-    def test_setup(self, page):
-        self.page = page
-        self.page.set_viewport_size(viewport_size={ 'width': 1366, 'height': 768 })
+    def test_setup(self, new_page):
+        self.page = new_page
         self.product = CategoryPage(self.page)
         self.order = OrderPage(self.page)
         self.products = ProductsPage(self.page)
         self.signup = SignupPage(self.page)
-        self.page.goto('http://automationexercise.com')
 
     def test_TestCase18_View_Category_Products(self, page, test_setup):
         self.product.check_category_products_sidebar()

@@ -11,17 +11,15 @@ from utils.tools import take_screenshot
 class TestContactUs:
 
     @pytest.fixture
-    def test_setup(self, page):
-        self.page = page
-        self.page.set_viewport_size(viewport_size={ 'width': 1366, 'height': 768 })
+    def test_setup(self, new_page):
+        self.page = new_page
         self.order = OrderPage(self.page)
         self.signup = SignupPage(self.page)
-        self.page.goto('http://automationexercise.com')
 
-    def test_TestCase14_Place_Order_Register_while_Checkout(self, page, test_setup):
+    def test_TestCase14_Place_Order_Register_while_Checkout(self, new_page, test_setup):
         self.order.add_to_card1_click()
         self.order.view_cart_btn_click()
-        expect(page).to_have_url('https://automationexercise.com/view_cart')
+        expect(new_page).to_have_url('https://automationexercise.com/view_cart')
         self.order.check_out_btn_click()
         self.order.register_login_btn_click()
         self.signup.name_input(Data.name)
@@ -62,7 +60,7 @@ class TestContactUs:
         self.signup.continue_btn2_click()
         take_screenshot(self.page, "Place_Order_Register_while_Checkout")
 
-    def test_TestCase15_Place_Order_Register_before_Checkout(self, page, test_setup):
+    def test_TestCase15_Place_Order_Register_before_Checkout(self, new_page, test_setup):
         self.signup.signup_login_btn_click()
         self.signup.name_input(Data.name)
         self.signup.email_signup_input(Data.email)
@@ -87,7 +85,7 @@ class TestContactUs:
         self.signup.logged_in_as_user_lbl_check()
         self.order.add_to_card1_click()
         self.order.view_cart_btn_click()
-        expect(page).to_have_url('https://automationexercise.com/view_cart')
+        expect(new_page).to_have_url('https://automationexercise.com/view_cart')
         self.order.check_out_btn_click()
         expect(self.order.address_delivery_field).to_contain_text("New street,2")
         self.order.form_control_field_fill()
@@ -104,14 +102,14 @@ class TestContactUs:
         self.signup.continue_btn2_click()
         take_screenshot(self.page, "Place_Order_Register_before_Checkout")
 
-    def test_TestCase16_Login_before_Checkout(self, page, test_setup):
+    def test_TestCase16_Login_before_Checkout(self, new_page, test_setup):
         self.signup.signup_login_btn_click()
         self.signup.login_email_address_field_input(Data.email4)
         self.signup.login_password_field_input(Data.password)
         self.signup.login_btn_click()
         self.order.add_to_card1_click()
         self.order.view_cart_btn_click()
-        expect(page).to_have_url('https://automationexercise.com/view_cart')
+        expect(new_page).to_have_url('https://automationexercise.com/view_cart')
         self.order.check_out_btn_click()
         expect(self.order.address_delivery_field).to_contain_text("New street,2")
         self.order.form_control_field_fill()
@@ -146,7 +144,7 @@ class TestContactUs:
         self.signup.mobile_number_field_input(Data.mobilenumber)
         self.signup.create_account_btn_click()
 
-    def test_TestCase23_Verify_address_details_in_checkout_page(self, page, test_setup):
+    def test_TestCase23_Verify_address_details_in_checkout_page(self, new_page, test_setup):
         self.signup.signup_login_btn_click()
         self.signup.name_input(Data.name)
         self.signup.email_signup_input(Data.email)
@@ -171,7 +169,7 @@ class TestContactUs:
         self.signup.logged_in_as_user_lbl_check()
         self.order.add_to_card1_click()
         self.order.view_cart_btn_click()
-        expect(page).to_have_url('https://automationexercise.com/view_cart')
+        expect(new_page).to_have_url('https://automationexercise.com/view_cart')
         self.order.check_out_btn_click()
         expect(self.order.address_delivery_field).to_contain_text("New street,2")
         expect(self.order.address_billing_field).to_contain_text("New street,22")
@@ -180,10 +178,10 @@ class TestContactUs:
         self.signup.continue_btn2_click()
         take_screenshot(self.page, "Verify_address_details_in_checkout_page")
 
-    def test_TestCase24_Download_Invoice_after_purchase_order(self, page, test_setup):
+    def test_TestCase24_Download_Invoice_after_purchase_order(self, new_page, test_setup):
         self.order.add_to_card1_click()
         self.order.view_cart_btn_click()
-        expect(page).to_have_url('https://automationexercise.com/view_cart')
+        expect(new_page).to_have_url('https://automationexercise.com/view_cart')
         self.order.check_out_btn_click()
         self.signup.register_login_click()
         self.signup.name_input(Data.name)

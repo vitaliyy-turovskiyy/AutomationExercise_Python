@@ -10,11 +10,9 @@ from utils.tools import take_screenshot
 class TestSignup:
 
     @pytest.fixture
-    def test_setup(self, page):
-        self.page = page
-        self.page.set_viewport_size(viewport_size={ 'width': 1366, 'height': 768 })
+    def test_setup(self, new_page):
+        self.page = new_page
         self.signup = SignupPage(self.page)
-        self.page.goto('http://automationexercise.com')
 
     def test_TestCase1_Register_User(self, test_setup):
         self.signup.signup_login_btn_click()
@@ -83,7 +81,7 @@ class TestSignup:
         self.signup.inform_message_lbl()
         take_screenshot(self.page, "Login_User_with_incorrect_email_and_password")
 
-    def test_TestCase4_Logout_User(self, page, test_setup):
+    def test_TestCase4_Logout_User(self, new_page, test_setup):
         self.signup.signup_login_btn_click()
         self.signup.login_your_account_lbl_check()
         self.signup.login_email_address_field_input(Data.email3)
@@ -91,7 +89,7 @@ class TestSignup:
         self.signup.login_btn_click()
         self.signup.logged_in_as_user_lbl_check()
         self.signup.logout_btn_click()
-        expect(page).to_have_title('Automation Exercise - Signup / Login')
+        expect(new_page).to_have_title('Automation Exercise - Signup / Login')
         take_screenshot(self.page, "Logout_User")
 
     def test_Test_Case5_Register_User_with_existing_email(self, test_setup):

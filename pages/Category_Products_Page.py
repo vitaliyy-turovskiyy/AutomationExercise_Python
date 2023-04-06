@@ -4,7 +4,6 @@ from playwright.sync_api import Page
 class CategoryPage:
 
     def __init__(self, page: Page):
-
         self.page = page
 
         self.category_products_sidebar = page.locator('[class="panel-group category-products"]')
@@ -48,7 +47,7 @@ class CategoryPage:
         self.products_button.click()
 
     def check_brands_products(self):
-        self.brands_products.is_visible()
+        assert self.brands_products.is_visible(), "brands_products is not visible"
 
     def brands_products_babyhug_click(self):
         self.brands_products_babyhug.click()
